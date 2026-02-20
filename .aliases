@@ -56,9 +56,11 @@ alias tut_env='source ~/venvs/tutorial/bin/activate'
 
 alias allspark='ssh -p 33 autobot@192.168.0.100'
 alias all8='ssh autobot@199.241.137.130'
+alias clawdia='ssh clawdia@199.241.137.130'
 alias all32='ssh autobot@209.182.238.76'
 alias all64='ssh autobot@89.233.108.176'
 alias inok='ssh autobot@209.182.238.141'
 alias kas='ssh ssh-w00fc63b@w00fc63b.kasserver.com'
 
-
+# OpenClaw Dashboard
+alias clawdia-dash='ssh -L 18789:127.0.0.1:18789 clawdia@199.241.137.130'
