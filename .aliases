@@ -1,9 +1,3 @@
-# Shortcuts
-alias home="cd ~/"
-alias multi="cd /Volumes/multiversum"
-alias uni="cd /Volumes/home/universum"
-alias time="cd /Volumes/Time-Capsule"
-
 # Detect which `ls` flavor is in use
 if ls --color >/dev/null 2>&1; then # GNU `ls`
     colorflag="--color"
@@ -12,7 +6,10 @@ else # OS X `ls`
 fi
 
 # List all files colorized in long format, including dot files
-alias la="ls -lahF ${colorflag}"
+alias l='ls -CF'
+alias la='ls -A'
+alias ll='ls -alF'
+alias ls='ls --color=auto'
 
 # Always use color output for `ls`
 alias ls="command ls ${colorflag}"
@@ -53,14 +50,20 @@ alias clean="osascript -e 'tell application \"Finder\" to empty the trash'; rm -
 alias wipe_env='rm -rf ~/venvs/tutorial; python3 -m venv ~/venvs/tutorial'
 alias tut_env='source ~/venvs/tutorial/bin/activate'
 
+# Shortcuts
+alias home="cd ~/"
+alias multi="cd /Volumes/multiversum"
+alias uni="cd /Volumes/home/universum"
+alias time="cd /Volumes/Time-Capsule"
 
 alias allspark='ssh -p 33 autobot@192.168.0.100'
 alias all8='ssh autobot@199.241.137.130'
-alias clawdia='ssh clawdia@199.241.137.130'
 alias all32='ssh autobot@209.182.238.76'
 alias all64='ssh autobot@89.233.108.176'
 alias inok='ssh autobot@209.182.238.141'
 alias kas='ssh ssh-w00fc63b@w00fc63b.kasserver.com'
+alias clawdia='ssh clawdia@199.241.137.130'
 
 # OpenClaw Dashboard
-alias clawdia-dash='ssh -L 18789:127.0.0.1:18789 clawdia@199.241.137.130'
+alias clawdia-gate='ssh -L 18789:127.0.0.1:18789 clawdia@199.241.137.130'
+alias martha-gate='ssh -L 18789:127.0.0.1:18789 martha@100.122.59.14'
