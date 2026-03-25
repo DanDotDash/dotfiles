@@ -26,22 +26,33 @@ config.automatically_reload_config = true
 -- Important for Pipe, geschwungene Klammer etc.
 config.send_composed_key_when_left_alt_is_pressed = true
 
--- ======================
--- macOS-ähnliche Keybindings
--- ======================
-
+-- Key bindings
 config.keys = {
-  -- Option + LeftArrow  → ein Wort zurück (wie im normalen macOS Terminal)
-  { key = 'LeftArrow',  mods = 'OPT', action = act.SendString '\x1bb' },
-
-  -- Option + RightArrow → ein Wort vor (wie im normalen macOS Terminal)
-  { key = 'RightArrow', mods = 'OPT', action = act.SendString '\x1bf' },
-
-  -- Optional, aber sehr praktisch:
-  -- Command + LeftArrow  → Zeilenanfang
-  -- Command + RightArrow → Zeilenende
-  { key = 'LeftArrow',  mods = 'CMD', action = act.SendString '\x1ba' },  -- Ctrl+A
-  { key = 'RightArrow', mods = 'CMD', action = act.SendString '\x1be' },  -- Ctrl+E
+  { 
+    key = 'LeftArrow',
+    mods = 'OPT',
+    action = act.SendString '\x1bb'
+  },
+  { 
+    key = 'RightArrow',
+    mods = 'OPT',
+    action = act.SendString '\x1bf'
+  },
+  { 
+    key = 'w',
+    mods = 'CMD',
+    action = wezterm.action.CloseCurrentPane { confirm = false }
+  },
+  { 
+    key = 'd',
+    mods = 'CMD',
+    action = wezterm. action.SplitHorizontal { domain = 'CurrentPaneDomain' }
+  },
+  { 
+    key = 'd',
+    mods = 'CMD|SHIFT',
+    action = wezterm. action.SplitVertical { domain = 'CurrentPaneDomain' }
+  },
 }
 
 return config
